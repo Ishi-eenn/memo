@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+    <title>（練習）メモ帳</title>
+  </head>
+
+  <body style="padding: 32px; background-color: rgb(248, 249, 250); color: rgb(33, 37, 41);">
+    <div>
+      <h2>メモ帳</h3>
+        <p>練習中　メモがかける</p>
+    </div>
+    <div style="padding-bottom: 24px;">
+      <button id="id-add-button" class="btn btn-primary">メモを登録する</button>
+    </div>
+    <div>
+      <div style="padding-bottom: 24px;">
+        <button id="id-delete-button" class="btn btn-secondary">削除する</button>
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col"><input type="checkbox" id="id-delete-all-memos"></th>
+            <th scope="col">タイトル</th>
+            <th scope="col">作成日</th>
+            <th scope="col">更新日</th>
+            <th scope="col">メモの確認</th>
+          </tr>
+        </thead>
+        <tbody id="id-memo-list">
+        </tbody>
+      </table>
+
+      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editModalLabel">確認</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="id-validation-error-in-edit-modal" class="alert alert-danger" style="display:none;" role="alert">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">タイトル</span>
+                <input type="text" id="id-modal-title" class="form-control" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default">
+                <input type="hidden" id="id-memo-id">
+              </div>
+              <div class="form-floating">
+                <textarea class="form-control" style="height: 150px;" placeholder="Leave a comment here"
+                  id="id-modal-body"></textarea>
+                <label for="id-modal-body">本文</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="id-update-button" class="btn btn-primary">更新</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="id-add-modal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="id-add-modal-label">登録</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="id-validation-error-in-add-modal" class="alert alert-danger" style="display:none;" role="alert">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">タイトル</span>
+                <input type="text" id="id-add-modal-title" class="form-control" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div class="form-floating">
+                <textarea class="form-control" style="height: 150px;" placeholder="Leave a comment here"
+                  id="id-add-modal-body"></textarea>
+                <label for="id-add-modal-body">本文</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="id-add-modal-button" class="btn btn-primary">登録</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"></script>
+    <script src = "main.js"></script>
+  </body>
+
+</html>
