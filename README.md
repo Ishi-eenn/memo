@@ -1,3 +1,3 @@
-# practice-memo
+# memo
 
 Studying JavaScript
